@@ -152,7 +152,7 @@ class Printer:
             summary_points = []
             
             for section in sections:
-                section_pattern = f"## {section}(.*?)(?=##|\Z)"
+                section_pattern = f"## {section}(.*?)(?=##|$)"
                 match = re.search(section_pattern, report_content, re.DOTALL)
                 if match:
                     section_text = match.group(1).strip()
@@ -167,7 +167,7 @@ class Printer:
                     else:
                         # For other sections, extract key points based on formatting
                         # Look for bullet points first
-                        bullets = re.findall(r'- \*\*(.*?)\*\*:(.*?)(?=\n-|\n\n|\Z)', section_text, re.DOTALL)
+                        bullets = re.findall(r'- \*\*(.*?)\*\*:(.*?)(?=\n-|\n\n|$)', section_text, re.DOTALL)
                         if bullets:
                             for topic, description in bullets[:2]:  # Limit to first 2 bullet points
                                 first_sentence = re.split(r'(?<=[.!?])\s+', description.strip())[0]
