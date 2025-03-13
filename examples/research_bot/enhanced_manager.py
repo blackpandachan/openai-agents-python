@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import os
+import re
 import time
 import json
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -26,7 +27,6 @@ from examples.research_bot.agents.scientific_standards_evaluator import (
     StandardsEvaluationResult
 )
 from examples.research_bot.printer import Printer
-import re
 
 
 # Router agent to determine the type of research needed
