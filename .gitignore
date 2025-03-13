@@ -142,3 +142,12 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Research Bot specific files
+examples/research_bot/research_output/
+examples/research_bot/error_log.txt
+examples/**/.env
+examples/**/raw_agent_output_*.txt
+*.bak
+examples/research_bot/sample_code/
+lunar_research_output.txt
